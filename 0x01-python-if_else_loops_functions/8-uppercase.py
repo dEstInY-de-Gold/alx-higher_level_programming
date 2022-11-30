@@ -3,7 +3,8 @@
 def uppercase(str):
     length = 0
     if str == '':
-        return
+        print()
+        exit
     else:
         for c in str:
             length += 1
