@@ -2,10 +2,10 @@
 
 
 def no_c(my_string):
-    for ch in string:
+    new_string = ''
+    for ch in my_string:
         if ch in 'Cc':
             continue
         else:
             new_string += ch
-#    new_string = my_string.translate({ord('c'): None, ord('C'): None})
     return new_string
