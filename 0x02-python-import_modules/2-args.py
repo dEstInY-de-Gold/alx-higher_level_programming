@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+<<<<<<< HEAD
 
 
 def func_args(**arg):
@@ -15,3 +16,10 @@ def func_args(**arg):
 
 
 func_args()
+=======
+import sys
+
+if __name__ == '__main__':
+    argvs = sys.argv[:]
+
+>>>>>>> c7bf212 (argv in py)

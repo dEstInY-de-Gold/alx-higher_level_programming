@@ -1,4 +1,3 @@
 #!/usr/bin/python3
-import sys, os
-
-os.write(5, '#pythoniscool')
+import sys
+sys.stdout.write('#pythoniscool')
