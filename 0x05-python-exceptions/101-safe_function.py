@@ -8,7 +8,7 @@ def safe_function(fct, *args):
     except (IndexError, TypeError, ZeroDivisionError):
         print('Exception: {}'.format(sys.exc_info()[1]), file=sys.stderr)
         return None
-    else:
+    except Exception:
         print("Exception: {}".format(sys.exc_info()[1]), file=sys.stderr)
         return None
     return res
