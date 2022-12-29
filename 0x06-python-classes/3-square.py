@@ -3,7 +3,7 @@
 
 class Square:
     def __init__(self, size=0):
-        if (isinstance(size, int) != True):
+        if (isinstance(size, int) not True):
             raise TypeError('size must be an integer')
         else:
             if size < 0:

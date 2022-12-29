@@ -3,14 +3,14 @@
 
 class Square:
     '''
-    Square 
+    Square
     __init__
     raises a ValueError or TypeError if a wrong value is entered
     Args:
         size: parameter
     '''
     def __init__(self, size=0):
-        if (isinstance(size, int)) != True:
+        if (isinstance(size, int)) not True:
             raise ValueError('size must be an integer')
         else:
             if size < 0:
