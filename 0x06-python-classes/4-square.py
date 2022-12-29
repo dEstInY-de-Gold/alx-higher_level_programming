@@ -1,18 +1,23 @@
 #!/usr/bin/python3
 
+'''
+A square object
+'''
 
 class Square:
     '''
     the square class
     it calculates the area of a square
     '''
-
     def __init__(self, size=0):
         '''
         Args:
             size (int): parameter
+        Raises:
+            TypeError: raises TypeError if size is not an int
+            ValueError: raises ValueError if size is negetive
         '''
-        if (isinstance(size, int) not True):
+        if not isinstance(size, int):
             raise TypeError('size must be an integer')
         else:
             if size < 0:
@@ -36,7 +41,7 @@ class Square:
 
     @size.setter
     def size(self, value):
-        if isinstance(value, int) not True:
+        if not isinstance(value, int):
             raise TypeError('size must be an integer')
         else:
             if value < 0:
@@ -45,4 +50,9 @@ class Square:
                 self.__size = value
 
     def area(self):
+        '''
+        Area of square
+        Returns:
+            int: square of the defined object
+        '''
         return self.__size ** 2

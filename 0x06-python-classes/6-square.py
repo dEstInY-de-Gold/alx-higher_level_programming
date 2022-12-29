@@ -1,5 +1,9 @@
 #!/usr/bin/python3
 
+'''
+A square object
+'''
+
 
 class Square:
     '''
@@ -8,21 +12,26 @@ class Square:
     '''
     def __init__(self, size=0, position=(0, 0)):
         '''
-        self.__size = size
-        self.__position = position
+        The initializer
+        Args:
+            size (int): first parameter
+            position (tuple): second parameter
+        Raises:
+            TypeError: raised if size or values for position are not ints
+            ValueError: raised if size or a similar case is found with position values
         '''
-        if (isinstance(size, int) not True):
+        if not isinstance(size, int):
             raise TypeError('size must be an integer')
         else:
             if size < 0:
                 raise ValueError('size must be >= 0')
             else:
                 self.__size = size
-        if len(position) != 2 or type(position) not tuple:
+        if len(position) != 2 or not isinstance(position, tuple):
             raise TypeError('position must be a tuple of 2 positive integers')
         else:
-            if (isinstance(position[0], int) not True
-                    or isinstance(position[1], int) not True):
+            if not isinstance(position[0], int)\
+                    or not isinstance(position[1], int):
                 raise ValueError('position must be \
                         a tuple of 2 positive integers')
             else:
@@ -32,13 +41,16 @@ class Square:
     def size(self):
         '''
         the getter for value size
-        Returns: integer
+        Args:
+            value (int): for size
+        Returns:
+            int: integer
         '''
         return self.__size
 
     @size.setter
     def size(self, value):
-        if isinstance(value, int) not True:
+        if not isinstance(value, int):
             raise TypeError('size must be an integer')
         else:
             if value < 0:
@@ -50,23 +62,31 @@ class Square:
     def position(self):
         '''
         the getter for value position
-        Returns: given location in a square
+        Args:
+            value (tuple): values used to fill located area with space
+        Returns:
+            int: given location in a square
         '''
         return self.__position
 
     @position.setter
     def position(self, value):
-        if type(value) not tuple or len(value) != 2:
+        if not isinstance(value, tuple) or len(value) != 2:
             raise TypeError('position must be a tuple of 2 positive integers')
         else:
-            if isinstance(value[0], int) not True
-            or isinstance(value[1], int) not True:
+            if not isinstance(value[0], int)\
+            or not isinstance(value[1], int):
                 raise ValueError('position must be \
                         a tuple of 2 positive integers')
             else:
                 self.__position = value
 
     def my_print(self):
+        '''
+        A print function
+        prints square object to stdout but fills
+        designated areas with a space
+        '''
         if self.__size == 0 and self.__position[1] <= 0:
             print()
         else:
@@ -82,4 +102,9 @@ class Square:
                 print()
 
     def area(self):
+        '''
+        Area of the square object
+        Returns:
+            int: area
+        '''
         return self.__size ** 2
