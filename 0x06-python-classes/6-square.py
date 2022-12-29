@@ -90,8 +90,10 @@ class Square:
         if self.__size == 0 and self.__position[1] <= 0:
             print()
         else:
+            '''
             if self.__position[1] > 0:
                 print()
+                '''
             for num in range(self.__size):
                 cnt = self.__position[0]
                 for i in range(self.__size):
