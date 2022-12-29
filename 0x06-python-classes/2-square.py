@@ -1,10 +1,14 @@
 #!/usr/bin/python3
 
+'''
+Definition of a square object.
+'''
+
 
 class Square:
     '''
-    Square
-   '''
+    Square class object
+    '''
     def __init__(self, size=0):
         '''
         Initializer for square class.
@@ -14,7 +18,7 @@ class Square:
             ValueError: raises a ValueError if size is negative
             TypeError: raises TypeError if size is not an integer
         '''
-        if (isinstance(size, int)) not True:
+        if not (isinstance(size, int)):
             raise TypeError('size must be an integer')
         else:
             if size < 0:
