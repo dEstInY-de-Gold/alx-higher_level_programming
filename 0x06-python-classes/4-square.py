@@ -7,6 +7,10 @@ class Square:
     it calculates the area of a square
     '''
     def __init__(self, size=0):
+        '''
+        Args:
+            size (int): parameter
+        '''
         if (isinstance(size, int) != True):
             raise TypeError('size must be an integer')
         else:
@@ -18,7 +22,13 @@ class Square:
     def size(self):
         '''
         the getter for value size
-        Returns: integer
+        Args:
+            value (int): integer value for size
+        Raises:
+            TypeError: if size is not an integer
+            ValueError: if size a negative value
+        Returns:
+            int: integer value for size
         '''
         return self.__size
 
