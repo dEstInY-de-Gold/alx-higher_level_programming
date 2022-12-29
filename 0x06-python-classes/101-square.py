@@ -102,4 +102,4 @@ class Square:
         Returns:
             int: area
         '''
-        return self.__size ** 2
+        return my_print()# self.__size ** 2

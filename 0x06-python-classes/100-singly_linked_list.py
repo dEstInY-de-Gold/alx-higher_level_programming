@@ -1,52 +1,103 @@
 #!/usr/bin/python3
 
+'''
+A node object of struct data for a singly linked list
+'''
+
 
 class Node:
+    '''
+    class node
+    data type for linked lists
+    '''
     def __init__(self, data, next_node=None):
-        if isinstance(data, int) not True:
+        '''
+        Struct initializer
+        Args:
+            data (int): Struct data
+            next_node (Node): node
+        Raises:
+            TypeError: raises TypeError if data is not an integer
+            or if next_node is not of type node
+        '''
+        if not isinstance(data, int):
             raise TypeError('data must be an integer')
         else:
             self.__data = data
-        if next_node != Node:
+        if not isinstance(next_node, Node):
             raise TypeError('next_node must be a node object')
         else:
             self.__next_node = next_node
 
     @property
     def data(self):
+        '''
+        Data value for struct
+        Args:
+            value (int): Struct data
+        Raises:
+            TypeError: Raises TypeError if data is not integer
+        Returns:
+            int: protected data
+        '''
         return self.__data
 
     @data.setter
     def data(self, value):
-        if isinstance(value, int) not True:
+        if not isinstance(value, int):
             raise TypeError('data must be an integer')
         else:
             self.__data = value
 
     @property
     def next_node(self):
+        '''
+        Data struct of next node
+        Args:
+            value (Node): A node data type
+        Raises:
+            TypeError: raise TypeError if next_node is not type Node
+        Returns:
+            Node: next_node of type Node
+        '''
         return self.__next_node
 
     @next_node.setter
     def next_node(self, value):
-        if type(next_node) not Node or next_node not None:
+        if not isinstance(node, Node):# or next_node not None:
             raise TypeError('next_node must be a node object')
         else:
             self.__next_node = value
 
 
+'''
+A list object of singly linked list
+'''
+
+
 class SinglyLinkedList:
+    '''
+    A singly linked list data initializer
+    '''
     node = Node
 
     def __init__(self):
-        pass
+        self.node = Node
 
     def sorted_insert(self, value):
-        if node is None:
-            node = Node(self.value)
+        '''
+        Insertion by sorted order of data
+        Args:
+            values (int): Struct data value
+        Returns:
+            Node: A pointer to head node of linked list
+        '''
+        self.value = value
+        if self.node is None:
+            self.node = Node(self.value)
             next_node = None
         else:
-            tmp = node
+            tmp = self.node
             while tmp:
                 if tmp >= self.value:
                     tmp1 = tmp
@@ -54,4 +105,4 @@ class SinglyLinkedList:
                     tmp.next_node = tmp
                 else:
                     tmp = tmp.next_node
-        return node
+        return self.node
