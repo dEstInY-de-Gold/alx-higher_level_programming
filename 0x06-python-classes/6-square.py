@@ -18,7 +18,8 @@ class Square:
             position (tuple): second parameter
         Raises:
             TypeError: raised if size or values for position are not ints
-            ValueError: raised if size or a similar case is found with position values
+            ValueError: raised if size or a similar case found\
+                    with position values are negatives
         '''
         if not isinstance(size, int):
             raise TypeError('size must be an integer')
@@ -74,8 +75,7 @@ class Square:
         if not isinstance(value, tuple) or len(value) != 2:
             raise TypeError('position must be a tuple of 2 positive integers')
         else:
-            if not isinstance(value[0], int)\
-            or not isinstance(value[1], int):
+            if not isinstance(value[0], int) or not isinstance(value[1], int):
                 raise ValueError('position must be \
                         a tuple of 2 positive integers')
             else:

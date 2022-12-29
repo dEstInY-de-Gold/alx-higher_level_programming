@@ -1,9 +1,13 @@
 #!/usr/bin/python3
 
+'''
+A square object
+'''
+
 
 class Square:
     '''
-    A class square.
+    A class square
     '''
     def __init__(self, size=0):
         '''

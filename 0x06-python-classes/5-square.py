@@ -1,5 +1,9 @@
 #!/usr/bin/python3
 
+'''
+A square object
+'''
+
 
 class Square:
     '''
