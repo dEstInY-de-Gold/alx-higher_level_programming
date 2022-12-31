@@ -1,16 +1,14 @@
 #!/usr/bin/python3
 '''
 A function that adds two integers
+Args:   a (int): first argument
+        a (int): second argument
 '''
 
 
 def add_integer(a, b=98):
     '''
-    Adds two integers
-    Args:
-        a: first argument
-        b: second argument
-    Returns: integer
+   Returns: integer
     '''
     if not isinstance(a, int) and not isinstance(a, float):
         raise TypeError('a must be an integer')
