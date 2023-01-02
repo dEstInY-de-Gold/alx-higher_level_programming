@@ -1,14 +1,26 @@
-import unittest
-import 0-add_interger
+# 0-add_integer.py
 
 
-class testAdd(unittest.TestCase):
-    def test_add_integer(self):
-        t = 0-add_integer.add_integer
-        self.assertEqual(t(5, 10), 15)
-        self.assertEqual(t(-2, 20), 18)
-        self.assertEqual(t(-5, -16, -21))
+def add_integer(a, b=98):
+    """Returns a plus b.
 
+    Works with integers:
 
-if __name__ == '__main__':
-    unittest.main()
+    >>> add_integer(5, 4)
+    9
+
+    >>> add_integer(-5, 4)
+    -1
+
+    >>> add_integer(-5, -4)
+    -9
+
+    Does not work with non-ints:
+
+    >>> add_integer('a', 1)
+    a must be an integer
+
+    >>> add_integer(3, 'n')
+    b must be an integer
+    """
+    return int(a) + int(b)
