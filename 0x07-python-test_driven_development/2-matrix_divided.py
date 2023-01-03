@@ -27,6 +27,8 @@ def matrix_divided(matrix, div):
             if type(j) is not int and type(j) is not float:# not isinstance(j, int) or not isinstance(j, float):
                 raise TypeError(element_error)
         else:
+            if type(div) is not int and type(div) is not float:
+                raise TypeError('div must be a number')
             elem = list(map(lambda j: float('{:.2f}'.format(j / div)), i))
             new_mat.append(elem)
             new_mat.remove(new_mat[-2])
