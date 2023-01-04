@@ -21,6 +21,7 @@ class Rectangle:
         '''
         self.__width = width
         self.__height = height
+
     @property
     def width(self, value):
         '''
@@ -34,6 +35,7 @@ class Rectangle:
             (int): width
         '''
         return self.__width
+
     @width.setter
     def width(self, value):
         if not isinstance(value, int):
@@ -57,6 +59,7 @@ class Rectangle:
             (int): height
         '''
         return self.__height
+
     @height.setter
     def height(self, value):
         if not isinstance(value, int):
@@ -74,6 +77,7 @@ class Rectangle:
             (int): area
         '''
         return self.__width * self.__height
+
     def perimeter(self):
         '''
         Perimeter of rectangle object
