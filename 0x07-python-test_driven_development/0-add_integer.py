@@ -2,7 +2,7 @@
 '''
 A function that adds two integers
 Args:   a (int): first argument
-        a (int): second argument
+        b (int): second argument
 '''
 
 
