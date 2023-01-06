@@ -16,8 +16,7 @@ def matrix_divided(matrix, div):
     '''
     new_mat = []
     flen = len(matrix[0])
-    element_error = 'matrix must be a matrix \
-            (list of lists) of integers/floats'
+    dat_err = 'matrix must be a matrix (list of lists) of integers/floats'
     if div == 0:
         raise ZeroDivisionError('division by zero')
     for i in matrix:
@@ -26,7 +25,7 @@ def matrix_divided(matrix, div):
         new_mat.append(i)
         for j in i:
             if type(j) is not int and type(j) is not float:
-                raise TypeError(element_error)
+                raise TypeError(dat_err)
         else:
             if type(div) is not int and type(div) is not float:
                 raise TypeError('div must be a number')
