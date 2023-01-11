@@ -9,11 +9,11 @@ def func_args():
         print('{} arguments.'.format(l))
     elif l == 1:
         print('{} argument:'.format(l))
-        print('{} : {}'.format(1, arg[0]))
+        print('{}: {}'.format(1, arg[0]))
     else:# l > 1:
         print('{} arguments:'.format(l))
         for i in arg:
-            print('{} : {}'.format(cnt + 1, i))
+            print('{}: {}'.format(cnt + 1, i))
             cnt += 1
 
 
