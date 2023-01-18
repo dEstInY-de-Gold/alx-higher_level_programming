@@ -148,15 +148,22 @@ class Rectangle(Base):
                 f'{self.__y} - {self.__width}/{self.__height}'
         return prnt
 
-    def update(self, *args):
-        '''
-        updates attribute in the rectangle object
-        '''
-        self.varss = [self.id, self.__width, self.__height, self.__x, self.__y]
+    def update(self, *args, **kwargs):
+        '''Method that assigns a value to each attribute'''
+        # Manera en la cual creas una lista con cada nombre de cada
+        # atributo y busca su existencia en el objeto
+        if len(args) > 0:
+            key = ["id", "width", "height", "x", "y"]
+            for x in range(len(args)):
+                setattr(self, key[x], args[x])
+        # Manera en la cual busca todos los attributos del objeto
+        # y los convierte en una lista
+        if len(args) == 0:
+            for x in kwargs:
+                setattr(self, x, kwargs[x])
 
-        if len(self.varss) > len(args):
-            for i in range(len(args)):
-                self.varss[i] = args[i]
-        else:
-            for i in range(len(self.varss)):
-                self.varss[i] = args[i]
+    def to_dictionary(self):
+        '''Method that returns the dictionary representation of a Rectangle'''
+        key = ["id", "width", "height", "x", "y"]
+        value = list(self.__dict__.values())
+        return dict(zip(key, value))
