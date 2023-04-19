@@ -52,15 +52,19 @@ class Rectangle(Base):
     def width(Self):
         '''
         Width method of rectangle
-        Args: value (int): size of width
-        Raises:
-            TypeError: if value is not an int
-            ValueError: if value is not greater than 0
+        Return (int): width of rectangle
         '''
         return self.__width
 
     @width.setter
     def width(self, value):
+        '''
+        Width method for rectangle
+        Args: value (int): size of width
+        Raises:
+            TypeError: if value is not an int
+            ValueError: if value is less than 1
+        '''
         if not isinstance(value, int):
             raise TypeError('width must be an integer')
         else:
@@ -73,15 +77,19 @@ class Rectangle(Base):
     def height(self):
         '''
         height of rectangle
-        Args: height (int): size of height
-        Raises:
-            TypeError: if value is not an int
-            ValueError: if value is not greater than 0
+        Return: size of heght
         '''
         return self.__height
 
     @height.setter
     def height(self, value):
+        '''
+        Height of rectangle
+        Args: value (int): size of height
+        Raises:
+            TypeError: if value is not an int
+            ValueError: if value is less than 1
+        '''
         if not isinstance(value, int):
             raise TypeError('height must be an integer')
         else:
@@ -94,14 +102,17 @@ class Rectangle(Base):
     def x(self):
         '''
         x - value of other instance attributes
-        Args: x (int): other instance attribute
-        Raises:
-            ValueError: if value is not greater than 0
         '''
         return self.__x
 
     @x.setter
     def x(self, value):
+        '''
+        x - value of other instance attributes
+        Args: x (int): the given value
+        Raises:
+            ValueError: if value is less than 1
+        '''
         if not isinstance(value, int):
             raise TypeError('x must be an integer')
         else:
@@ -114,14 +125,17 @@ class Rectangle(Base):
     def y(self, value):
         '''
         y - value of other instance attribute
-        Args: value (int): y
-        Raises:
-            ValueError: if value is not greater than 0
         '''
         return self.__y
 
     @y.setter
     def y(self, value):
+        '''
+        y - value of y-instance attribute
+        Args: value (int): the given value
+        Raises:
+            ValueError: if value is less than 1
+        '''
         if not isinstance(value, int):
             raise TypeError('y must be an integer')
         else:
@@ -131,9 +145,16 @@ class Rectangle(Base):
                 self.__y = value
 
     def area(self):
+        '''
+        Defines the area of the object
+        Return (int): the area
+        '''
         return self.__width * self.__height
 
     def display(self):
+        '''
+        Prints a special formatted display of the object
+        '''
         for n in range(self.__y):
             print()
         for i in range(self.__height):
