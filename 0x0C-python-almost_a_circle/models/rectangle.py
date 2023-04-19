@@ -55,9 +55,10 @@ class Rectangle(Base):
         Args: value (int): size of width
         Raises:
             TypeError: if value is not an int
-            ValueError: if value is not greater than 0 
+            ValueError: if value is not greater than 0
         '''
         return self.__width
+
     @width.setter
     def width(self, value):
         if not isinstance(value, int):
@@ -144,8 +145,8 @@ class Rectangle(Base):
         '''A customised string format
         Returns: the string
         '''
-        prnt = f'[Rectangle] ({self.id}) {self.__x}/'\
-                f'{self.__y} - {self.__width}/{self.__height}'
+        prnt = f'[Rectangle] ({self.id}) {self.__x}/\
+                {self.__y} - {self.__width}/{self.__height}'
         return prnt
 
     def update(self, *args, **kwargs):
