@@ -117,19 +117,19 @@ class TestBase(unittest.TestCase):
         self.assertEqual(type(json_string), str)
 
     def test_load_from_file_square(self):
-    """Test loading Square objects from file"""
-    # Create and save some Square objects to a file
-    s1 = Square(5)
-    s2 = Square(10)
-    Square.save_to_file([s1, s2])
+        """Test loading Square objects from file"""
+        # Create and save some Square objects to a file
+        s1 = Square(5)
+        s2 = Square(10)
+        Square.save_to_file([s1, s2])
 
-    # Load the Square objects from the file
-    loaded_squares = Square.load_from_file()
+        # Load the Square objects from the file
+        loaded_squares = Square.load_from_file()
 
-    # Assert that the loaded objects are of the correct type and have the correct attributes
-    self.assertIsInstance(loaded_squares, list)
-    self.assertEqual(len(loaded_squares), 2)
-    self.assertIsInstance(loaded_squares[0], Square)
-    self.assertIsInstance(loaded_squares[1], Square)
-    self.assertEqual(loaded_squares[0].size, 5)
-    self.assertEqual(loaded_squares[1].size, 10)
+        # Assert that the loaded objects are of the correct type and have the correct attributes
+        self.assertIsInstance(loaded_squares, list)
+        self.assertEqual(len(loaded_squares), 2)
+        self.assertIsInstance(loaded_squares[0], Square)
+        self.assertIsInstance(loaded_squares[1], Square)
+        self.assertEqual(loaded_squares[0].size, 5)
+        self.assertEqual(loaded_squares[1].size, 10)
