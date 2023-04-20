@@ -1,10 +1,18 @@
 #!/usr/bin/python3
-'''Base Class'''
+
 import json
+
+'''
+Base Class
+'''
 
 
 class Base():
-    '''Base Class'''
+    '''Base Class
+    Its the parent class of the model's object classes
+    it defines an init method that set id to increment automatically
+    if it is not specified in the call to the class
+    '''
     __nb_objects = 0
 
     def __init__(self, id=None):

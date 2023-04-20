@@ -9,6 +9,11 @@ Rectangle class inheritting from Base class
 class Rectangle(Base):
     '''
     Inherits from Base class
+    This class defines private attribute for the folowing;
+    height: the height of the rectangle object
+    widh: the width of the rectangle object
+
+    it also inherits from the base module's properties
     '''
     def __init__(self, width, height, x=0, y=0, id=None):
         '''Initialiser
@@ -18,6 +23,7 @@ class Rectangle(Base):
             x (int): other instance attribute
             y (int): another instance attributes
         '''
+        # calling init method for super class
         super().__init__(id)
         if not isinstance(width, int):
             raise TypeError('width must be an integer')
@@ -172,14 +178,10 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         '''Method that assigns a value to each attribute'''
-        # Manera en la cual creas una lista con cada nombre de cada
-        # atributo y busca su existencia en el objeto
         if len(args) > 0:
             key = ["id", "width", "height", "x", "y"]
             for x in range(len(args)):
                 setattr(self, key[x], args[x])
-        # Manera en la cual busca todos los attributos del objeto
-        # y los convierte en una lista
         if len(args) == 0:
             for x in kwargs:
                 setattr(self, x, kwargs[x])
