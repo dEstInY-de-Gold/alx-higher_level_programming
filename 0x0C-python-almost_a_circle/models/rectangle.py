@@ -3,6 +3,10 @@ from models.base import Base
 
 '''
 Rectangle class inheritting from Base class
+
+the class also define many other methods that handle
+various functionalities for the construction of
+a rectangle object.
 '''
 
 
