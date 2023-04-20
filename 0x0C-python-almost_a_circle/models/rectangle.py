@@ -18,10 +18,20 @@ class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         '''Initialiser
         Args:
-            width (int): width of rectangle
-            height (int): height of rectangle
-            x (int): other instance attribute
-            y (int): another instance attributes
+            width (int): width of the rectangle.
+            height (int): height of the rectangle.
+            x (int, optional): horizontal position of the rectangle.
+                Defaults to 0.
+            y (int, optional): vertical position of the rectangle.
+                Defaults to 0.
+            id (int, optional): unique identifier for the instance.
+                If not provided, the value of __nb_objects will be used
+                and incremented.
+
+        Raises:
+            TypeError: if width, height, x, or y are not integers.
+            ValueError: if width, height, x, or y are less than or
+                equal to 0.
         '''
         # calling init method for super class
         super().__init__(id)
@@ -57,8 +67,10 @@ class Rectangle(Base):
     @property
     def width(Self):
         '''
-        Width method of rectangle
-        Return (int): width of rectangle
+        Gets the width of the Rectangle object.
+
+        Returns:
+            int: The width of the Rectangle object.
         '''
         return self.__width
 
@@ -83,7 +95,7 @@ class Rectangle(Base):
     def height(self):
         '''
         height of rectangle
-        Return: size of heght
+        Return (int): size of heght
         '''
         return self.__height
 
@@ -107,7 +119,10 @@ class Rectangle(Base):
     @property
     def x(self):
         '''
-        x - value of other instance attributes
+        Gets the x-coordinate of the Rectangle object.
+
+        Returns:
+            int: The x-coordinate of the Rectangle object.
         '''
         return self.__x
 
@@ -115,7 +130,7 @@ class Rectangle(Base):
     def x(self, value):
         '''
         x - value of other instance attributes
-        Args: x (int): the given value
+        Args: value (int): the given value
         Raises:
             ValueError: if value is less than 1
         '''
@@ -131,6 +146,10 @@ class Rectangle(Base):
     def y(self, value):
         '''
         y - value of other instance attribute
+        Gets the y-coordinate of the Rectangle object.
+
+        Returns:
+            int: The y-coordinate of the Rectangle object.
         '''
         return self.__y
 
@@ -170,14 +189,20 @@ class Rectangle(Base):
 
     def __str__(self):
         '''A customised string format
-        Returns: the string
+        Returns (str): the string
         '''
         prnt = f'[Rectangle] ({self.id}) {self.__x}/\
                 {self.__y} - {self.__width}/{self.__height}'
         return prnt
 
     def update(self, *args, **kwargs):
-        '''Method that assigns a value to each attribute'''
+        '''Method that assigns a value to each attribute
+        Args:
+            args: a variable list of arguments for height, width,
+                x, y and id values for the rectangle object.
+            kwargs (dict): also a variable list of arguments
+                but in dic format
+        '''
         if len(args) > 0:
             key = ["id", "width", "height", "x", "y"]
             for x in range(len(args)):
@@ -187,7 +212,10 @@ class Rectangle(Base):
                 setattr(self, x, kwargs[x])
 
     def to_dictionary(self):
-        '''Method that returns the dictionary representation of a Rectangle'''
+        '''Method that returns the dictionary representation of a Rectangle
+        Returns:
+            A dictionary representation of rectangle object
+        '''
         key = ["id", "width", "height", "x", "y"]
         value = list(self.__dict__.values())
         return dict(zip(key, value))
