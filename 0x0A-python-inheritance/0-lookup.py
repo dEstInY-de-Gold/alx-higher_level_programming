@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+""" lookup task """
 
 def lookup(obj):
     """
