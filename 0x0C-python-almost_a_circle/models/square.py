@@ -26,7 +26,7 @@ class Square(Rectangle):
             y (int, optional): vertical positionn of square
             id (int, optional): unique identifier for object.
         '''
-        super().__init__(size, size, x, y, id)
+        super().__init__(self, size, x, y, id)
 
         self.width = size
         self.height = size
