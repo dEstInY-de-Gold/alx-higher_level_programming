@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 # Check if the user provided a URL as an argument
 if [ $# -ne 1 ]; then
