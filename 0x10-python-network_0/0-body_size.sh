@@ -1,9 +1,5 @@
 #!/usr/bin/bash
 
-
-
-#!/bin/bash
-
 # Check if the user provided a URL as an argument
 if [ $# -ne 1 ]; then
     echo "Usage: $0 <URL>"
@@ -23,16 +19,4 @@ content_length=$(echo "$response" | grep -i "Content-Length" | awk '{print $2}' 
 body_size=$(curl -s "$url" | wc -c)
 
 # Display the content length in bytes
-echo "Size of the response body: $body_size bytes"
-
-
-
-# Use curl to send a GET request and store the output in a variable
-# response=$(curl -sI "$url")
-# echo "$response"
-
-# Extract the Content-Length header value from the response headers
-# content_length=$(echo "$response" | grep -i "Content-Length" | awk '{print $2}')
-
-# Display the content length in bytes
-# echo "$content_length"
+echo "$body_size"
