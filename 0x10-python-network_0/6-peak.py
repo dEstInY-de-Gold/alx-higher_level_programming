@@ -4,6 +4,7 @@
 Peak in a list
 '''
 
+
 def find_peak(list_of_integers):
     '''
     A function for finding the peak of a list
@@ -19,7 +20,7 @@ def find_peak(list_of_integers):
         '''
     if len(list_of_integers) == 0:
         return None
-    
+
     for item in list_of_integers:
         indx = list_of_integers.index(item)
         if indx < 1:
